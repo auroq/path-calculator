@@ -57,13 +57,28 @@ Then repeat this for B2 to find the cheepest cost to be 100.
 So if we were to take this problem all at once.
 We could ask ourselves what is the shortest path to A4?
 
-Written in pseudocode it would look something like this:
+Written in pseudocode, where n is the number of segments in the paths, it would look something like this:
 
 ```
-func optimal_path_to(A4) {
-    minimum_value {
-        cost_between_A3_and_A4 + optimal_path_to(A3)
-        cost_between_B3_and_B4 + cost_of_crossroads_between_B4_and_A4 + optimal_path_to(B3)
+func optimal_path_to(An) {
+    minimum_between {
+        cost_between_An_and_A(n-1) + optimal_path_to(A(n-1))
+        cost_between_Bn_and_B(n-1) + cost_of_crossroads_between_Bn_and_An + optimal_path_to(B(n-1))
+    }
+}
+```
+
+Then in order to find the shortest distance from start to destination,
+you simply take the minimum of the optimal path to the destination on point path A and the optimal path to the destination on point path B.
+
+
+Written in pseudocode, where n is the number of segments in the paths, it would look something like this:
+
+```
+func optimal_path_to_destination() {
+    minimum_between {
+        optimal_path_to(An)
+        optimal_path_to(Bn)
     }
 }
 ```
