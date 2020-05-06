@@ -29,7 +29,7 @@ B ------1------2------3------4
 
 This problem can be broken down into a few chunks.
 
-Start by identifying the cost to a the first point in the crossroads (A1 above).
+Start by identifying the cost to a the first point in the path, A1 above.
 This can be done by crossing forward to A1 for a total cost of 50.
 It can aslo be done by crossing forward to B1 (10) and then taking a crossroad (30) to A1 for a total cost of 40.
 Keep the lower cost (40).
@@ -44,6 +44,7 @@ Now let's repeat everything above to calculate the cheapest path to A2 and B2.
 Let's do this for A2 first by just calulating the cheapest path assuming we are at A1 or B1.
 The cost from A1 to A2 is 5.
 The cost from B1 to A2 is 110 (90 + 20).
+
 Before we decided which cost is lower, we must first also add the cost we have already calculated to get to A1 or B1.
 The cost from our starting point  using A1 is 5 plus the cheapest path to A1 (40): 45.
 The cost from our starting point  using B1 is 110 plus the cheapest path to B1 (10): 110.
@@ -68,7 +69,7 @@ func optimal_path_to(A4) {
 ```
 
 This solution can be implemented differently depending on language.
-However, if you are thinking functionally, it essentially equates to using a [left fold](https://en.wikipedia.org/wiki/Fold_(higher-order_function)) to walk the path from left to right while accumulating the best path to `An` and `Bn`.
+However, if you are thinking functionally, it essentially equates to using a [left fold](https://en.wikipedia.org/wiki/Fold_(higher-order_function)) to walk the path from left to right while accumulating the best path to An and Bn.
 
 
 > Credit for the original idea for this exercise goes to the book [Learn You a Haskell for Great Good](http://learnyouahaskell.com/functionally-solving-problems#heathrow-to-london)
