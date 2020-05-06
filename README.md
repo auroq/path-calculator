@@ -50,7 +50,7 @@ The cost from our starting point  using A1 is 5 plus the cheapest path to A1 (40
 The cost from our starting point  using B1 is 110 plus the cheapest path to B1 (10): 110.
 Thus the cheapest cost to A2 is 45 which we keep.
 
-Then repeat this for B2 to find the cheepest cost to be 100.
+Then repeat this for B2 to find the cheapest cost to be 100.
 
 ### Solution Summary
 
