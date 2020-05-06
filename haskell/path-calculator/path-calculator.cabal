@@ -1,0 +1,59 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 8218d6081bb5711625d8191a301f201719313f9cfffcb2c74864e09ba3de2a4c
+
+name:           path-calculator
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/auroq/path-calculator#readme>
+category:       Text
+homepage:       https://github.com/auroq/path-calculator#readme
+bug-reports:    https://github.com/auroq/path-calculator/issues
+author:         Parker Johansen
+maintainer:     johansen.parker@gmail.com
+copyright:      Copyright (c) 2020 Parker Johansen
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/auroq/path-calculator
+
+library
+  exposed-modules:
+      PathCalculator
+  other-modules:
+      Paths_path_calculator
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , genvalidity
+    , genvalidity-hspec
+    , hspec
+    , validity
+  default-language: Haskell2010
+
+test-suite path-calculator-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      PathCalculatorSpec
+      Paths_path_calculator
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , genvalidity
+    , genvalidity-hspec
+    , hspec
+    , path-calculator
+    , validity
+  default-language: Haskell2010
