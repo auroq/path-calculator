@@ -16,7 +16,6 @@ func TestWhenCalulatingHeathrowToLondon(t *testing.T) {
 		{C, 20},
 		{B, 2},
 		{B, 8},
-		{C, 0},
 	}
 	actual := optimalPath(heathrowToLondon)
 	t.Run("should return correct path", func(t *testing.T) {

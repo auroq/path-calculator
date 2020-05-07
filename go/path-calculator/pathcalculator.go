@@ -22,6 +22,30 @@ type Movement struct {
 type Path []Movement
 
 func optimalPath(system RoadSystem) (path Path) {
+	optimalA, optimalB := stepRecursive(Path{}, Path{}, system)
+
+	if sum(optimalA) < sum(optimalB) {
+		return optimalA
+	}
+
+	return optimalB
+}
+
+func stepRecursive(pathA Path, pathB Path, system RoadSystem) (newPathA, newPathB Path) {
+	newPathA, newPathB = step(pathA, pathB, system[0])
+
+	if len(system) == 1 {
+		return
+	}
+
+	return stepRecursive(newPathA, newPathB, system[1:])
+}
+
+func sum(path Path) (sum int) {
+	for _, movement := range path {
+		sum += movement.Cost
+	}
+
 	return
 }
 
